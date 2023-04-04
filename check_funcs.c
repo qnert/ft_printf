@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 12:51:01 by skunert           #+#    #+#             */
-/*   Updated: 2023/04/04 16:52:10 by skunert          ###   ########.fr       */
+/*   Updated: 2023/04/04 17:23:21 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ char	*next_arg(const char *s)
 }
 
 //Liste mit allen specifiern
-char *specifier_list(char *s)
+char	*specifier_list(char *s)
 {
 	int		i;
 	char	*tmp_buff;

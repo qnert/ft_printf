@@ -6,12 +6,13 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 14:40:21 by skunert           #+#    #+#             */
-/*   Updated: 2023/04/04 16:48:57 by skunert          ###   ########.fr       */
+/*   Updated: 2023/04/04 17:24:11 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
+//Nummer ausgeben
 void	ft_putnbr(int n)
 {
 	long long int	nbr;
@@ -35,6 +36,7 @@ void	ft_putnbr(int n)
 	}
 }
 
+//Hexadezimalzahl mit kleinen Buchstaben
 void	ft_putnbr_hexa_lower(long n)
 {
 	char	*s;
@@ -51,10 +53,11 @@ void	ft_putnbr_hexa_lower(long n)
 		tmp_s[i] = s[tmp];
 		i++;
 	}
-	while(i--)
+	while (i--)
 		ft_putchar(tmp_s[i]);
 }
 
+//Hexadezimalzahl mit großen Buchstaben
 void	ft_putnbr_hexa_upper(long n)
 {
 	char	*s;
@@ -71,7 +74,6 @@ void	ft_putnbr_hexa_upper(long n)
 		tmp_s[i] = s[tmp];
 		i++;
 	}
-	while(i--)
+	while (i--)
 		ft_putchar(tmp_s[i]);
 }
-
