@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   printf.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 11:34:29 by skunert           #+#    #+#             */
-/*   Updated: 2023/04/04 12:55:54 by skunert          ###   ########.fr       */
+/*   Updated: 2023/04/04 16:48:52 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,12 @@
 int		check_str(const char *s);
 char	input_type(const char *s);
 char	*next_arg(const char *s);
-char 	*specifier_list(char *s);
+char	*specifier_list(char *s);
 void	ft_putchar(char c);
 void	ft_putstr(char *s);
 void	ft_putpercent();
+void	ft_putnbr(int n);
+void	ft_putnbr_hexa_lower(long n);
+void	ft_putnbr_hexa_upper(long n);
 
 #endif

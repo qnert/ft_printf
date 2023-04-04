@@ -6,11 +6,11 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 12:51:01 by skunert           #+#    #+#             */
-/*   Updated: 2023/04/04 13:11:05 by skunert          ###   ########.fr       */
+/*   Updated: 2023/04/04 16:44:07 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "printf.h"
 
 // wie viele specifiers sind im string
 int	check_str(const char *s)
@@ -69,6 +69,7 @@ char	*next_arg(const char *s)
 	return (NULL);
 }
 
+//Liste mit allen specifiern
 char *specifier_list(char *s)
 {
 	int		i;
@@ -86,8 +87,7 @@ char *specifier_list(char *s)
 	return (tmp_buff);
 }
 
-int main(void)
+void	convert_specifiers(char *s, char *list_of_speci)
 {
-	printf("%s\n", specifier_list("H%ca%sllo %d was %c %xeht%"));
-	return (0);
+
 }
