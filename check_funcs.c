@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 12:51:01 by skunert           #+#    #+#             */
-/*   Updated: 2023/04/04 16:44:07 by skunert          ###   ########.fr       */
+/*   Updated: 2023/04/04 16:52:10 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ char *specifier_list(char *s)
 	return (tmp_buff);
 }
 
-void	convert_specifiers(char *s, char *list_of_speci)
-{
+// void	convert_specifiers(char *s, char *list_of_speci)
+// {
 
-}
+// }

@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 11:31:07 by skunert           #+#    #+#             */
-/*   Updated: 2023/04/04 16:49:20 by skunert          ###   ########.fr       */
+/*   Updated: 2023/04/04 16:52:06 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 int ft_printf(const char *s, ...)
 {
-	char	*buff;
 	int		amount_args;
 	int		i;
 	va_list ptr;
@@ -33,10 +32,4 @@ int ft_printf(const char *s, ...)
 	}
 	va_end(ptr);
 	return (strlen(s));
-}
-
-int main(void)
-{
-	ft_putnbr_hexa_upper(213156383);
-	return (0);
 }

@@ -2,17 +2,14 @@ CC = cc
 CFLAGS = -Wall -Werror -Wextra
 NAME = libftprintf.a
 
-SRCS = ft_printf.c
-OBJS = $(SRC:.c=.o)
-
-
+SRCS = ft_printf.c print_char.c print_nb.c check_funcs.c
+OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
 $(NAME) : $(OBJS)
 	$(CC) $(CFLAGS) -c $(SRCS)
 	ar -rcs $(NAME) $(OBJS)
-
 
 clean:
 	rm -f $(OBJS)
