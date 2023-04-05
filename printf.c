@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 11:31:07 by skunert           #+#    #+#             */
-/*   Updated: 2023/04/05 14:41:35 by skunert          ###   ########.fr       */
+/*   Updated: 2023/04/05 14:51:03 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ int	ft_printf(const char *s, ...)
 		if (s[i++] == '%')
 		{
 			ft_check_specifiers(s[i], ptr, &ret_len);
+			if (s[i] == '\0')
+				break ;
 			i++;
 		}
 	}

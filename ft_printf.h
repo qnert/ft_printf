@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 11:34:29 by skunert           #+#    #+#             */
-/*   Updated: 2023/04/05 14:38:28 by skunert          ###   ########.fr       */
+/*   Updated: 2023/04/05 14:49:57 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,6 @@
 
 # include <stdarg.h>
 # include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <string.h>
 # include <stddef.h>
 # include <limits.h>
 
