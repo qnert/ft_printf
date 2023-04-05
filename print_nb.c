@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 14:40:21 by skunert           #+#    #+#             */
-/*   Updated: 2023/04/05 10:03:38 by skunert          ###   ########.fr       */
+/*   Updated: 2023/04/05 10:09:54 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_putnbr(int n, int *ret_len)
 	nbr = n;
 	if (nbr < 0)
 	{
-		write(1, "-", 1);
+		ft_putchar('-', ret_len);
 		nbr *= -1;
 	}
 	if (nbr >= 10)
