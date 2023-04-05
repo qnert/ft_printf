@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 11:31:07 by skunert           #+#    #+#             */
-/*   Updated: 2023/04/05 10:37:19 by skunert          ###   ########.fr       */
+/*   Updated: 2023/04/05 10:39:23 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,12 @@
 
 void	ft_check_specifiers(char c, va_list ptr, int *ret_len)
 {
-	char		*tmp_s;
 	long long	tmp;
 
 	if (c == 'c')
 		ft_putchar(va_arg(ptr, int), ret_len);
 	if (c == 's')
-	{
-		tmp_s = va_arg(ptr, char *);
-		if (tmp_s != NULL)
-			ft_putstr(tmp_s, ret_len);
-	}
+		ft_putstr(va_arg(ptr, char *), ret_len);
 	if (c == '%')
 		ft_putpercent(ret_len);
 	if (c == 'd' || c == 'i')
