@@ -6,28 +6,45 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 11:31:07 by skunert           #+#    #+#             */
-/*   Updated: 2023/04/04 17:23:41 by skunert          ###   ########.fr       */
+/*   Updated: 2023/04/05 07:52:10 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
-#include <string.h>
-#include <stdio.h>
+
+void	ft_check_specifiers(char c, int x)
+{
+	if (c == 'c')
+		ft_putchar(x);
+	if (c == 'd')
+		ft_putnbr(x);
+	if (c == 'i')
+		ft_putnbr(x);
+	if (c == 'x')
+		ft_putnbr_hexa_lower(x);
+	if (c == 'X')
+		ft_putnbr_hexa_upper(x);
+}
 
 int	ft_printf(const char *s, ...)
 {
-	int		amount_args;
+	int		x;
 	int		i;
 	va_list	ptr;
 
-	amount_args = check_str(s);
 	i = 0;
-	if (amount_args == 0)
-		return (ft_putstr((char *)s), strlen(s));
 	va_start(ptr, s);
-	while (i < amount_args)
+	while (s[i] != '\0')
 	{
-		printf("%d\n", va_arg(ptr, int));
+		if (s[i] != '%' || (s[i] == '%' && strchr("cspdiuxX%%", s[i + 1]) == 0))
+			ft_putchar(s[i]);
+		else if (strchr("cspdiuxX%%", s[++i]) != 0)
+		{
+			x = va_arg(ptr, int);
+			ft_check_specifiers(s[i], x);
+		}
+		else
+			ft_putchar(s[i]);
 		i++;
 	}
 	va_end(ptr);
@@ -36,5 +53,5 @@ int	ft_printf(const char *s, ...)
 
 int	main(void)
 {
-	ft_printf("Hallo", 5, 6, 7, 3, 6);
+	ft_printf("Hulk-%clo %d\n", 'k', 1000);
 }

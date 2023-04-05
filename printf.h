@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 11:34:29 by skunert           #+#    #+#             */
-/*   Updated: 2023/04/04 17:23:03 by skunert          ###   ########.fr       */
+/*   Updated: 2023/04/05 07:52:47 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,8 @@
 # include <stdlib.h>
 # include <string.h>
 
-int		check_str(const char *s);
-char	input_type(const char *s);
-char	*next_arg(const char *s);
-char	*specifier_list(char *s);
+void	ft_check_specifiers(char c, int x);
+int		ft_printf(const char *s, ...);
 void	ft_putchar(char c);
 void	ft_putstr(char *s);
 void	ft_putpercent(void);
