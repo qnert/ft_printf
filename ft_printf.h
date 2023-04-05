@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 11:34:29 by skunert           #+#    #+#             */
-/*   Updated: 2023/04/05 09:29:58 by skunert          ###   ########.fr       */
+/*   Updated: 2023/04/05 09:57:25 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 void	ft_check_specifiers(char c, va_list ptr, int *ret_len);
 int		ft_printf(const char *s, ...);
 void	ft_putchar(char c, int *ret_len);
-void	ft_putstr(char *s);
-void	ft_putpercent(void);
+void	ft_putstr(char *s, int *ret_len);
+void	ft_putpercent(int *ret_len);
 void	ft_putnbr(int n);
 void	ft_putnbr_hexa_lower(long n);
 void	ft_putnbr_hexa_upper(long n);
