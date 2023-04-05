@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 11:31:07 by skunert           #+#    #+#             */
-/*   Updated: 2023/04/05 10:26:00 by skunert          ###   ########.fr       */
+/*   Updated: 2023/04/05 10:36:36 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,6 @@ int	ft_printf(const char *s, ...)
 
 // int	main(void)
 // {
-// 	ft_printf("%u\n", -1);
-// 	printf("%u\n", -1);
+// 	ft_printf(" %x \n", 0);
+// 	printf(" %x \n", 0);
 // }
