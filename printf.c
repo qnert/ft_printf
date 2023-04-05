@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 11:31:07 by skunert           #+#    #+#             */
-/*   Updated: 2023/04/05 09:57:52 by skunert          ###   ########.fr       */
+/*   Updated: 2023/04/05 10:07:29 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,24 @@
 
 void	ft_check_specifiers(char c, va_list ptr, int *ret_len)
 {
+	char	*tmp_s;
+	
 	if (c == 'c')
 		ft_putchar(va_arg(ptr, int), ret_len);
 	if (c == 's')
-		ft_putstr(va_arg(ptr, char *), ret_len);
+	{
+		tmp_s = va_arg(ptr, char *);
+		if (tmp_s != NULL)
+			ft_putstr(tmp_s, ret_len);
+	}
 	if (c == '%')
 		ft_putpercent(ret_len);
-	// if (c == 'd')
-	// 	ft_putnbr(x);
-	// if (c == 'i')
-	// 	ft_putnbr(x);
-	// if (c == 'x')
-	// 	ft_putnbr_hexa_lower(x);
-	// if (c == 'X')
-	// 	ft_putnbr_hexa_upper(x);
+	if (c == 'd' || c == 'i')
+		ft_putnbr(va_arg(ptr, int), ret_len);
+	if (c == 'x')
+		ft_putnbr_hexa_lower((long) va_arg(ptr, int), ret_len);
+	if (c == 'X')
+		ft_putnbr_hexa_upper((long) va_arg(ptr, int), ret_len);
 }
 
 int	ft_printf(const char *s, ...)
