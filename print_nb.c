@@ -6,32 +6,30 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 14:40:21 by skunert           #+#    #+#             */
-/*   Updated: 2023/04/05 10:09:54 by skunert          ###   ########.fr       */
+/*   Updated: 2023/04/05 10:25:21 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 //Nummer ausgeben
-void	ft_putnbr(int n, int *ret_len)
+void	ft_putnbr(long long n, int *ret_len)
 {
-	long long int	nbr;
 	char			c;
 
-	nbr = n;
-	if (nbr < 0)
+	if (n < 0)
 	{
 		ft_putchar('-', ret_len);
-		nbr *= -1;
+		n *= -1;
 	}
-	if (nbr >= 10)
+	if (n >= 10)
 	{
-		ft_putnbr(nbr / 10, ret_len);
-		ft_putnbr(nbr % 10, ret_len);
+		ft_putnbr(n / 10, ret_len);
+		ft_putnbr(n % 10, ret_len);
 	}
 	else
 	{
-		c = nbr + '0';
+		c = n + '0';
 		ft_putchar(c, ret_len);
 	}
 }

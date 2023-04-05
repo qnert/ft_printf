@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 11:31:07 by skunert           #+#    #+#             */
-/*   Updated: 2023/04/05 10:07:29 by skunert          ###   ########.fr       */
+/*   Updated: 2023/04/05 10:26:00 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void	ft_check_specifiers(char c, va_list ptr, int *ret_len)
 {
-	char	*tmp_s;
-	
+	char		*tmp_s;
+	long long	tmp;
+
 	if (c == 'c')
 		ft_putchar(va_arg(ptr, int), ret_len);
 	if (c == 's')
@@ -28,6 +29,13 @@ void	ft_check_specifiers(char c, va_list ptr, int *ret_len)
 		ft_putpercent(ret_len);
 	if (c == 'd' || c == 'i')
 		ft_putnbr(va_arg(ptr, int), ret_len);
+	if (c == 'u')
+	{
+		tmp = va_arg(ptr, int);
+		if (tmp < 0)
+			tmp = 4294967296 + tmp;
+		ft_putnbr(tmp, ret_len);
+	}
 	if (c == 'x')
 		ft_putnbr_hexa_lower((long) va_arg(ptr, int), ret_len);
 	if (c == 'X')
@@ -59,5 +67,6 @@ int	ft_printf(const char *s, ...)
 
 // int	main(void)
 // {
-// 	printf("%d\n", ft_printf("%c", '0'));
+// 	ft_printf("%u\n", -1);
+// 	printf("%u\n", -1);
 // }
