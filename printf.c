@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 11:31:07 by skunert           #+#    #+#             */
-/*   Updated: 2023/04/05 11:13:17 by skunert          ###   ########.fr       */
+/*   Updated: 2023/04/05 14:41:35 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ void	ft_check_specifiers(char c, va_list ptr, int *ret_len)
 		ft_putnbr_hexa_lower((long) va_arg(ptr, int), ret_len);
 	if (c == 'X')
 		ft_putnbr_hexa_upper((long) va_arg(ptr, int), ret_len);
+	if (c == 'p')
+		ft_putadress(va_arg(ptr, void *), ret_len);
 }
 
 int	ft_printf(const char *s, ...)
@@ -59,9 +61,3 @@ int	ft_printf(const char *s, ...)
 	va_end(ptr);
 	return (ret_len);
 }
-
-// int	main(void)
-// {
-// 	ft_printf("%d\n", ft_printf("%s", (char *)NULL));
-// 	printf("%d\n", printf("%c|%s",'S', (char *)NULL));
-// }

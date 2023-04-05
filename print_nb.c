@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 14:40:21 by skunert           #+#    #+#             */
-/*   Updated: 2023/04/05 10:36:23 by skunert          ###   ########.fr       */
+/*   Updated: 2023/04/05 14:40:36 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_putnbr(long long n, int *ret_len)
 void	ft_putnbr_hexa_lower(long long n, int *ret_len)
 {
 	char	*s;
-	char	tmp_s[10];
+	char	tmp_s[20];
 	int		i;
 	int		tmp;
 
@@ -63,7 +63,7 @@ void	ft_putnbr_hexa_lower(long long n, int *ret_len)
 void	ft_putnbr_hexa_upper(long long n, int *ret_len)
 {
 	char	*s;
-	char	tmp_s[10];
+	char	tmp_s[20];
 	int		i;
 	int		tmp;
 
@@ -82,4 +82,42 @@ void	ft_putnbr_hexa_upper(long long n, int *ret_len)
 	}
 	while (i--)
 		ft_putchar(tmp_s[i], ret_len);
+}
+
+void	ft_putnbr_adress_hexa(unsigned long long n, int *ret_len)
+{
+	char	*s;
+	char	tmp_s[30];
+	int		i;
+	int		tmp;
+
+	if (n < 0)
+		n = ULLONG_MAX + 1 + n;
+	s = "0123456789abcdef";
+	i = 0;
+	if (n == 0)
+		ft_putchar('0', ret_len);
+	while (n != 0)
+	{
+		tmp = n % 16;
+		n = n / 16;
+		tmp_s[i] = s[tmp];
+		i++;
+	}
+	while (i--)
+		ft_putchar(tmp_s[i], ret_len);
+}
+
+void	ft_putadress(void *ptr, int *ret_len)
+{
+	unsigned long	converted_ptr;
+
+	ft_putstr("0x", ret_len);
+	if (ptr == NULL)
+		ft_putstr("0", ret_len);
+	else
+	{
+		converted_ptr = (unsigned long) ptr;
+		ft_putnbr_adress_hexa(converted_ptr, ret_len);
+	}
 }

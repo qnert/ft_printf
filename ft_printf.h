@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 11:34:29 by skunert           #+#    #+#             */
-/*   Updated: 2023/04/05 11:08:09 by skunert          ###   ########.fr       */
+/*   Updated: 2023/04/05 14:38:28 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
+# include <stddef.h>
+# include <limits.h>
 
 void	ft_check_specifiers(char c, va_list ptr, int *ret_len);
 int		ft_printf(const char *s, ...);
@@ -27,5 +29,6 @@ void	ft_putpercent(int *ret_len);
 void	ft_putnbr(long long n, int *ret_len);
 void	ft_putnbr_hexa_lower(long long n, int *ret_len);
 void	ft_putnbr_hexa_upper(long long n, int *ret_len);
+void	ft_putadress(void *ptr, int *ret_len);
 
 #endif
