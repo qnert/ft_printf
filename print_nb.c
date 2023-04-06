@@ -6,7 +6,7 @@
 /*   By: skunert <skunert@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 14:40:21 by skunert           #+#    #+#             */
-/*   Updated: 2023/04/05 14:40:36 by skunert          ###   ########.fr       */
+/*   Updated: 2023/04/06 12:43:28 by skunert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,8 +91,6 @@ void	ft_putnbr_adress_hexa(unsigned long long n, int *ret_len)
 	int		i;
 	int		tmp;
 
-	if (n < 0)
-		n = ULLONG_MAX + 1 + n;
 	s = "0123456789abcdef";
 	i = 0;
 	if (n == 0)
